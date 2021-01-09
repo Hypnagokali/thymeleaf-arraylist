@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<h1>Submitform Seite</h1>
+
+<form th:action="@{/add}" method="post">
+    <div th:each="user, stat : ${userForm.userList}">
+        <label>User:</label>
+        <input type="text" th:value="${user.name}" th:name="|userList[${stat.index}].name|">
+        <input type="number" th:value="${user.age}" th:name="|userList[${stat.index}].age|">
+    </div>
+    <br>
+    <input type="submit" value="abschicken">
+</form>
+
+<a th:href="@{/index}">Zurück</a>
+</body>
+</html>
