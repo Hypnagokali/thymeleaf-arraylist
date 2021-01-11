@@ -20,13 +20,13 @@ public class WebController {
     @RequestMapping("/submitform")
     public String submitform(Model model) {
         UserForm userForm = new UserForm();
-        User stefan = new User("Tim", 20);
-        User lisa = new User("Alexandra", 33);
-        User quinn = new User("Moritz", 16);
+        User tim = new User("Tim", 20);
+        User alexa = new User("Alexandra", 33);
+        User moritz = new User("Moritz", 16);
         List<User> userList = new ArrayList<>();
-        userList.add(stefan);
-        userList.add(lisa);
-        userList.add(quinn);
+        userList.add(tim);
+        userList.add(alexa);
+        userList.add(moritz);
         userForm.setUserList(userList);
 
         model.addAttribute("userForm", userForm);
@@ -42,7 +42,6 @@ public class WebController {
                 System.out.println("User: " + user.getName() + " Alter: " + user.getAge());
             });
         }
-        // process Objects
         return "redirect:/";
     }
 
